@@ -1,7 +1,7 @@
 //document.getElementById("rps-container").textContent = "RPS Works"
 
 //Global Variables
-let [humanScore, globalScore] = [0, 0]
+let [humanScore, computerScore] = [0, 0]
 
 //Randomly return Rock, Paper, or Scissors
 function getComputerChoice(){
@@ -56,30 +56,36 @@ function playRound(humanChoice, computerChoice){
           return;
         case "PAPER":
           console.log(`You Lose! Your ${humanChoice} was covered by their ${computerChoice}!`)
+          computerScore++;
           return;
         case "SCISSORS":
           console.log(`You Win! Your ${humanChoice} smashed their ${computerChoice}!`)
+          humanScore++;
           return;
       }
     case "PAPER":
       switch(computerChoice){
         case "ROCK":
           console.log(`You Win! Your ${humanChoice} covered up their ${computerChoice}!`)
+          humanScore++;
           return;
         case "PAPER":
           console.log(`You Tied! Your ${humanChoice} doesn't beat their ${computerChoice}!`)
           return;
         case "SCISSORS":
           console.log(`You Lose! Your ${humanChoice} was sliced by their ${computerChoice}!`)
+          computerScore++;
           return;
       }
     case "SCISSORS":
       switch(computerChoice){
         case "ROCK":
           console.log(`You Lose! Your ${humanChoice} were crushed by their ${computerChoice}!`)
+          computerScore++;
           return;
         case "PAPER":
           console.log(`You Win! Your ${humanChoice} sliced through their ${computerChoice}!`)
+          humanScore++;
           return;
         case "SCISSORS":
           console.log(`You Tied! Your ${humanChoice} smashed their ${computerChoice}!`)

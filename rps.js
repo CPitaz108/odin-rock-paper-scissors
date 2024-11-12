@@ -1,0 +1,1 @@
+document.getElementById("rps-container").textContent = "RPS Works"
